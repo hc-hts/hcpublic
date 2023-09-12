@@ -1,0 +1,104 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Tablular" sap2010:WorkflowViewState.IdRef="Tablular_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:aw="clr-namespace:AutomatR.Web;assembly=AutomatR.Web"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>AutomatR.Runtime</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>AutomatR.FlowConfig</AssemblyReference>
+      <AssemblyReference>AutomatR.Runtime</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <aw:OpenBrowser Browser="{x:Null}" ClearCache="{x:Null}" Delay="{x:Null}" Incognito="{x:Null}" Maximise="{x:Null}" Title="{x:Null}" DisplayName="Open Browser" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Instance="AttachtoExisting" URL="https://acme-test.uipath.com/*">
+      <aw:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="aw:WebScope">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="aw:WebScope" Name="ScopeActivity" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Scope" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="Variable`1_1" Name="res" />
+            </Sequence.Variables>
+            <aw:ExtractData Delay="{x:Null}" DataTable="[res]" DisplayName="Extract Data" Element="&quot;[&quot;True&quot;,&quot;False&quot;,&quot;Page reload&quot;,&quot;body &gt;div.container&gt;div.main-container&gt;div.panel.panel-default&gt;table.table&quot;,&quot;body &gt;div.container&gt;div.main-container&gt;div.panel.panel-default&gt;nav.woocommerce-pagination.navigation&gt;ul.page-numbers&gt;li.page-item&gt;a.page-numbers&quot;,&quot;&quot;]&quot;" sap2010:WorkflowViewState.IdRef="ExtractData_1" />
+            <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[res.Rows.Count.ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </aw:OpenBrowser.Body>
+    </aw:OpenBrowser>
+    <sads:DebugSymbol.Symbol>dy9DOlxVc2Vyc1x5YW1pblxEb2N1bWVudHNcQXV0b21hdFJcVGFibHVsYXIueGFtbAglAzcOAgEBJgU1FgIBAib0ASaUAgIBCSwLMhYCAQMwDTCCBAIBBjENMWkCAQQwODA/AgEHMUsxZgIBBQ==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Variable`1_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">b6e04bac-dfdb-40a6-b7fa-34d1d292d27f</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExtractData_1" sap:VirtualizedContainerService.HintSize="210,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">8af5092c-fce0-47a1-b7f5-d103d2a534ae</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="210,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">45992a79-8792-403c-8503-fb517ccfc153</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="232,247">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="284,377">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">7dbe1157-be67-4923-891a-21ffd0527730</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="306,501">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:String x:Key="CustomActivityId">acc98a54-69d3-4806-8a0d-df95f407c132</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Tablular_1" sap:VirtualizedContainerService.HintSize="346,621" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
