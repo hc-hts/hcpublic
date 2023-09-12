@@ -1,0 +1,83 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Teams" sap2010:WorkflowViewState.IdRef="Teams_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:am="clr-namespace:AutomatR.MicrosoftTeams;assembly=AutomatR.MicrosoftTeams"
+ xmlns:ama="clr-namespace:AutomatR.MicrosoftTeams.Activities;assembly=AutomatR.MicrosoftTeams"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>AutomatR.Runtime</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>AutomatR.FlowConfig</AssemblyReference>
+      <AssemblyReference>AutomatR.Runtime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <ama:MicrosoftTeamsScope Delay="{x:Null}" DisplayName="Microsoft Teams Scope" sap2010:WorkflowViewState.IdRef="MicrosoftTeamsScope_1" RefreshToken="0.AVYAw74UZfrBGUG3UqutaT9vr_-EBe07zhtLumPnlYefwzpWACI.AgABAAEAAAAtyolDObpQQ5VtlI4uGjEPAgDs_wUA9P8j86qarwJIn71c431SlUsMdN7WuayqQLD63og7mtnzt8wOlJQnHMYsSvlOuPBt3gofA31DdxNTypQVc865n9jClmgB3O-u_YD8NUOe79_iPYF4OciKre6CRA5VSjRmj5BW91LQFpGXsikkS-UyC4MvpIoDKfXL2fdjxcAUFaNohTmMwVkiMf90DKh9UaIcjCbG0F8r572dHspsiVRsj2XNdVNzk6AyHkZ_r1tsq304ulDVK5xpP5h0dStsC6FVJDAjH-8EoAZXKYUC98u0bClzpJSgwYtl94SwmQ5QhUf_yM8LaC3kAFk4pYkvDr9zY56lbK9ttPH_oCHi6ZaWefANzw_lntpI4zAC6yhjXG8GP-Cpmiqdwxj7p-Q0LOn9lrT5OiWD_RbxO_xbj1kgdoquLOrYuD95-xc-oyg7xYMWnjpWEotKX_4QKMWqNhSrspXwaeeb8lrKrgXEUwuFjG1wP18Gp6ChO0Ug4piiD0ES02OkXp-hgJjB4-46Ih8AdxJ4PjVKPu06GWYKk0QGfIeWUCJJjFTSBx1Y5-mCdBJ-rzr7g2RfdAbd90ENJPmfOAxpnzrFpfzYmPghhWGnZZSmis9HOwc1vk8Wp0OlJykyVdJsOrItKW5vB233bQHAXgtXPXu5dLhlsJPOfM8tr8oxPNmrtBsUk35-Zcwj_LFZC4g9k026YXrxV4NkjbaMQGFOmP0c3eMdO-OWPVV86Zih3wmL8p8LkkOATYdtuIwhrH3wKt80LIb_qMvfVyJSdwtVhKopFSAbU53-BW7K5KiwJlWyR6WOu3X00b5XmKF6fspR99j9YLrhmaSshxXWpcOnl_IuKuSBkYQLLD-Mt9rhckYCbj_6PZun5m568leUOpgfEiRwEW3PulN0SweXmSICxGSOQi_vvfJnrmEfQ6DnJ7Uz7IkH9WeUMaXEMA">
+      <ama:MicrosoftTeamsScope.Body>
+        <ActivityAction x:TypeArguments="am:MicrosoftTeamsScopeApp">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="am:MicrosoftTeamsScopeApp" Name="ScopeActivity" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Scope" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <am:CreateChannel Delay="{x:Null}" Result="{x:Null}" ChannelDescription="desc" ChannelName="New Test Channel" DisplayName="Create Channel" sap2010:WorkflowViewState.IdRef="CreateChannel_1" TeamID="6b67eefa-1d29-4848-a2c8-e4b0b7586f53" />
+          </Sequence>
+        </ActivityAction>
+      </ama:MicrosoftTeamsScope.Body>
+    </ama:MicrosoftTeamsScope>
+    <sads:DebugSymbol.Symbol>dyxDOlxVc2Vyc1x5YW1pblxEb2N1bWVudHNcQXV0b21hdFJcVGVhbXMueGFtbAciAzAOAgEBIwUuHwIBAikLKxYCAQMqDSr6AQIBBCrRASr3AQIBBypVKlsCAQYqaCp6AgEF</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="CreateChannel_1" sap:VirtualizedContainerService.HintSize="200,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">7aad2b11-5ddb-4d76-8f73-7e6b408a61ac</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="222,146">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MicrosoftTeamsScope_1" sap:VirtualizedContainerService.HintSize="309,276">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">13989034-27e9-4725-bf4b-81b9743d4d75</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="331,400">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:String x:Key="CustomActivityId">8275fd65-f9dc-4d0e-81cc-f474cbf46da9</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Teams_1" sap:VirtualizedContainerService.HintSize="371,480" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
