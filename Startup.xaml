@@ -1,0 +1,159 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Startup" sap2010:WorkflowViewState.IdRef="Startup_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:aw="clr-namespace:AutomatR.WhatsApp;assembly=AutomatR.WhatsApp"
+ xmlns:awa="clr-namespace:AutomatR.WhatsApp.Activities;assembly=AutomatR.WhatsApp"
+ xmlns:awm="clr-namespace:AutomatR.WhatsApp.Model;assembly=AutomatR.WhatsApp"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>AutomatR.Runtime</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>AutomatR.WhatsApp.Model</x:String>
+      <x:String>AutomatR.WhatsApp.Activities</x:String>
+      <x:String>AutomatR.WhatsApp</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>AutomatR.FlowConfig</AssemblyReference>
+      <AssemblyReference>AutomatR.Runtime</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Prism</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>AutomatR.WhatsApp</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <awa:WhatsAppScope Delay="{x:Null}" AccessToken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1YjViMWY0Ny05NTAxLTQxNWUtOGU0YS00MzJiNzZkMzY3MDYiLCJ1bmlxdWVfbmFtZSI6ImFwcHNAYXV0b21hdHIudGVjaCIsIm5hbWVpZCI6ImFwcHNAYXV0b21hdHIudGVjaCIsImVtYWlsIjoiYXBwc0BhdXRvbWF0ci50ZWNoIiwiYXV0aF90aW1lIjoiMDgvMjUvMjAyMyAwODowMjo1MCIsImRiX25hbWUiOiIxMTM5NDAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBRE1JTklTVFJBVE9SIiwiZXhwIjoyNTM0MDIzMDA4MDAsImlzcyI6IkNsYXJlX0FJIiwiYXVkIjoiQ2xhcmVfQUkifQ.9lymRyLznWtxCzQcEa863stk1k2p4Z_SYupNC3aqloc" DisplayName="WhatsApp Scope" sap2010:WorkflowViewState.IdRef="WhatsAppScope_1">
+      <awa:WhatsAppScope.Body>
+        <ActivityAction x:TypeArguments="aw:WhatsAppScopeApp">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="aw:WhatsAppScopeApp" Name="ScopeActivity" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Scope" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[new Dictionary(of string,string) from{{&quot;location&quot;,&quot;Vadodara&quot;}}]" sap2010:WorkflowViewState.IdRef="Variable`1_1" Name="parameters" />
+              <Variable x:TypeArguments="awm:ResultCreateContact" sap2010:WorkflowViewState.IdRef="Variable`1_2" Name="createContact" />
+              <Variable x:TypeArguments="awm:ResultGetMessageByNumber" sap2010:WorkflowViewState.IdRef="Variable`1_5" Name="variable1" />
+            </Sequence.Variables>
+            <Sequence DisplayName="getMessage" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="awm:ResultGetMessageByNumber" sap2010:WorkflowViewState.IdRef="Variable`1_6" Name="getMessageByWhatsappNumber" />
+              </Sequence.Variables>
+              <awa:GetMessageByWhatsAppNumber Delay="{x:Null}" PageNumber="{x:Null}" PageSize="{x:Null}" DisplayName="Get Message By WhatsApp Number" sap2010:WorkflowViewState.IdRef="GetMessageByWhatsAppNumber_1" Response="[getMessageByWhatsappNumber]" WhatsAppNumber="918849083738" />
+              <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[getMessageByWhatsappNumber.messages.items(5).text]" />
+            </Sequence>
+            <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Hello Hitesh" />
+          </Sequence>
+        </ActivityAction>
+      </awa:WhatsAppScope.Body>
+    </awa:WhatsAppScope>
+    <sads:DebugSymbol.Symbol>d0lDOlxVc2Vyc1x5YW1pblxEb2N1bWVudHNcQXV0b21hdFJcaGNwdWJsaWNcaGNwdWJsaWNcV2hhdHNhcHBcU3RhcnR1cC54YW1sDS8DSQ4CAQEwBUcZAgECMDUwugQCAQ42C0QWAgEDOFY4rAECAQQ8DUIYAgEHQw1DXAIBBUAPQJ4CAgEKQQ9BhQECAQhDS0NZAgEGQN8BQP0BAgEMQI0CQJsCAgELQU1BggECAQk=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Variable`1_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">b1b0a42a-4c9e-42ea-bc2b-fd9e637955b5</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Variable`1_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">9497d150-98a0-4f0a-93b2-4176f20ee680</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Variable`1_5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">1a40dffb-3c88-4af9-8e34-8b506fefbb27</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Variable`1_6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">07e9a8d7-9dda-4025-8604-ce2538274382</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetMessageByWhatsAppNumber_1" sap:VirtualizedContainerService.HintSize="210,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">f064988c-4887-4b74-8f3c-364c03693af3</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_3" sap:VirtualizedContainerService.HintSize="210,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">efdcb6fa-ef71-49b2-b1dc-29a2e3b9832f</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="232,247">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">60701acc-43f0-495d-af7a-1f2905cbd04d</x:String>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_4" sap:VirtualizedContainerService.HintSize="232,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">8045ea73-3897-4976-aac5-cae72f34c6fb</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="254,472">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WhatsAppScope_1" sap:VirtualizedContainerService.HintSize="284,602">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">af8d049d-4eb0-4300-994e-364b3cfaac38</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="306,726">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:String x:Key="CustomActivityId">04081d34-7d49-4248-a006-ed0e32cac387</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Startup_1" sap:VirtualizedContainerService.HintSize="346,806" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
