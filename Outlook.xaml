@@ -1,0 +1,102 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Outlook" sap2010:WorkflowViewState.IdRef="Outlook_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:ad="clr-namespace:AutomatR.DefaultActivities;assembly=AutomatR.DefaultActivities"
+ xmlns:ao="clr-namespace:AutomatR.Outlook;assembly=AutomatR.Outlook"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:moio="clr-namespace:Microsoft.Office.Interop.Outlook;assembly=AutomatR.Outlook"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>AutomatR.Runtime</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>Microsoft.Office.Interop.Outlook</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>AutomatR.FlowConfig</AssemblyReference>
+      <AssemblyReference>AutomatR.Runtime</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>AutomatR.Outlook</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(moio:MailItem)" sap2010:WorkflowViewState.IdRef="Variable`1_1" Name="result" />
+    </Sequence.Variables>
+    <ao:GetOutlookMailMessage BodyContaining="{x:Null}" Delay="{x:Null}" FolderName="{x:Null}" GetOnlyUnread="{x:Null}" MarkAsReadAfterGet="{x:Null}" NumberofMails="{x:Null}" Sender="{x:Null}" SubjectContaining="{x:Null}" AccountName="yamini@hyperthread.in" DefaultFolder="Inbox" DisplayName="Get Outlook Mail Messages" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessage_1" Result="[result]" />
+    <ad:Commented DisplayName="Commented Activities" sap2010:WorkflowViewState.IdRef="Commented_1">
+      <ad:Commented.Body>
+        <ForEach x:TypeArguments="moio:MailItem" DisplayName="ForEach&lt;MailItem&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[res]">
+          <ActivityAction x:TypeArguments="moio:MailItem">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="moio:MailItem" Name="item" />
+            </ActivityAction.Argument>
+            <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[item.Subject]" />
+          </ActivityAction>
+        </ForEach>
+      </ad:Commented.Body>
+    </ad:Commented>
+    <sads:DebugSymbol.Symbol>dy5DOlxVc2Vyc1x5YW1pblxEb2N1bWVudHNcQXV0b21hdFJcT3V0bG9vay54YW1sBSkDOw4CAQEtBS2PAwIBAy4FORQCAQIt6wEtggICAQUtggMtjAMCAQQ=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Variable`1_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">ae5a03b3-49b8-41ab-b1ee-0405a4037d35</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="GetOutlookMailMessage_1" sap:VirtualizedContainerService.HintSize="313,85">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">3a96fefc-594b-4bec-a053-146aa6013bc2</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="210,61" />
+      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="287,209">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">8b17197d-0d4b-40d4-84ef-b5fc63e12a1c</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Commented_1" sap:VirtualizedContainerService.HintSize="313,297">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="CustomActivityId">0f363ff1-2a12-4c87-ab79-3bed7dcb536c</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335,546">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:String x:Key="CustomActivityId">4379a64f-ce4e-4494-a629-417f50431279</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Outlook_1" sap:VirtualizedContainerService.HintSize="375,706" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
